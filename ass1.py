@@ -7,6 +7,11 @@ def subtract(x, y): #function to subtract two numbers
 def multiply(x, y): #function to multiply two numbers
     return x * y 
 
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        raise ValueError("Cannot divide by zero")
 
 def main():
     print("Choose an operation:")
@@ -17,15 +22,17 @@ def main():
 
     choice = input("Enter choice (1/2/3/4): ")
 
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
+    n1 = float(input("Enter first number: "))
+    n2 = float(input("Enter second number: "))
 
     if choice == '1':
-        print("Result:", add(num1, num2))
+        print("Result:", add(n1, n2))
     elif choice == '2':
-        print("Result:", subtract(num1, num2))
+        print("Result:", subtract(n1, n2))
     elif choice == '3':
-        print("Result:", multiply(num1, num2))
+        print("Result:", multiply(n1, n2))
+    elif choice == '4':
+        print("Result:", divide(n1, n2))
     else:
         print("Invalid choice")
         
